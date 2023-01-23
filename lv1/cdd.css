@@ -1,0 +1,34 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    color:#208;
+    text-align: center;
+}
+.ids{
+    color: #208;
+    text-align: center;
+}
+/* a{
+    text-align: left;
+    color: aqua;
+} */
+a[title=time]{
+    color: aquamarine;
+    text-align: center;
+}
+h2.ids{
+    color: darkseagreen;
+}
+#href{
+    color: royalblue;
+}
+
+.box{
+    margin: 15px;
+    width: auto;
+    height: auto;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 20px;
+}

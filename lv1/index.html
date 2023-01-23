@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="play()">播放/暂停</button>
+    <button onclick="next()">下一个</button>
+    <button onclick="last()">上一个</button>
+
+    <input type="file" id="upload" name="upload" multiple><br>
+    <video id="v" width="420" controls src="./video.mp4" type="video/mp4" >
+    </video>
+</body>
+<script>
+    i=0;
+    let video=document.getElementById("v")
+   
+
+
+    function play(){
+        if (video.paused)
+            video.play();
+        else
+            video.pause();
+        
+    }
+    function next(){
+      let upload =document.getElementById("upload");
+    let filelist=upload.files;
+      if (i<filelist.length-1){
+
+      i++;
+      video.src=URL.createObjectURL(filelist[i])
+      console.log(filelist[i].size,filelist[i].name)
+
+
+    }
+   
+    }
+    function last(){
+      let upload =document.getElementById("upload");
+    let filelist=upload.files;
+      if (i>0){
+        i--;
+        video.src=URL.createObjectURL(filelist[i])
+        console.log(filelist[i].size,filelist[i].name)
+      }
+    }
+
+
+</script>
+</html>
