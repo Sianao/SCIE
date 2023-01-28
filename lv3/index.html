@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv3</title>
+</head>
+<style>
+    button {
+    width: 200px; 
+    height: 40px;
+    margin: auto;
+    background-color: pink;
+    /* float: left; */
+    border: 5px ;
+    border-radius: 8px;
+    padding: 5px;
+  
+}
+</style>
+<body>
+    <div>
+        <button onclick="getlocation()">获取当前位置</button>
+    </div>
+    <br>
+    <div>
+        <button onclick="watchposition()">开启实时更新位置</button>
+    </div>
+    <br>
+    <div>
+        <button onclick="cancel()">停止位置信息的更新</button>
+    </div>
+    <div>
+        <h1>位置信息</h1>
+        <p id="location">
+            
+        </p>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
