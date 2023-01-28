@@ -8,10 +8,13 @@
 </head>
 <link rel="stylesheet" href="./style.css" type="text/css">
 <body>
-    <video id="video" src="../lv1/痛仰乐队 - 聚划算神马奇妙夜《公路之歌》.mp4" ></video>
-    <br>
-    <input type="file" name="upload" id="upload" onchange="change()">
-    <br>
+    <div id="player">
+        <video id="video"  width="600px"  type="video/mp4" src="../lv1/痛仰乐队 - 聚划算神马奇妙夜《公路之歌》.mp4" ></video>
+    </div>
+    <div id="input">
+        <input type="file" name="upload" id="upload" onchange="change()">
+    </div>
+    
     <div id="range">
         <button>进度选择</button>
         <div id="duration">
@@ -33,7 +36,14 @@
             <button onclick="speed(1.5)" value="1.5">1.5</button>
         </div>
     </div>
-
+    <br>
+    <div id="voice">
+        <button>声音 调节</button>
+        <div id="volumn">
+            <input type="range" id="vol" max=100,min=0 step=1 onchange="voice()">
+        </div>
+       
+    </div>
 </body>
 <script>
     function speed(m){
@@ -65,9 +75,7 @@
     //         m =document.getElementById("video");
     //         console.log(m.duration);
     //         m.src=event.target.result;
-           
     //     }
-        
     // }
     function duration(){
         let video=document.getElementById("video")
@@ -76,6 +84,11 @@
         let time=document.getElementById("timeup")
         console.log(time.value)
         video.currentTime=parseInt((time.value)*video.duration/100)
+    }
+    function voice(){
+        let video=document.getElementById("video")
+        let volumn=document.getElementById("vol")
+        video.volume=((volumn.value)/100)
     }
      
     

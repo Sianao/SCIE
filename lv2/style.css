@@ -1,10 +1,26 @@
+/* #player{
+    width: auto;
+    margin: auto;
+    padding: 20px;
+    border: 0px;
+    
+    text-align: center;
+    clear: both;
+}
+#input{
+    margin: auto;
+    text-align: center;
+} */
+
 #dropdown{
+    /* margin: auto; */
+    /* text-align: center; */
     position: relative;
     display: inline-block;
 }
 #content{
         display: none;
-        position: absolute;
+        position: relative;
         background-color: #f9f9f9;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(64, 76, 164, 0.2);
@@ -12,6 +28,7 @@
 }
 #dropdown:hover #content{
     display: block;
+    position: relative;
 }
 #range{
     display: inline-block;
@@ -19,9 +36,21 @@
 }
 #duration{
     display: none;
-    position: absolute;
+    position: relative;
 }
 #range:hover #duration{
+    display: block;
+    position: relative;
+}
+#voice{
+    display: inline-block;
+    position: relative;
+}
+#volumn{
+    display: none;
+    position: relative;
+}
+#voice:hover #volumn{
     display: block;
     position: relative;
 }
