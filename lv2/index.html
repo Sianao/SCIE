@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv2</title>
+</head>
+<link rel="stylesheet" href="./style.css" type="text/css">
+<body>
+    <video id="video" src="../lv1/痛仰乐队 - 聚划算神马奇妙夜《公路之歌》.mp4" ></video>
+    <br>
+    <input type="file" name="upload" id="upload" onchange="change()">
+    <br>
+    <div id="range">
+        <button>进度选择</button>
+        <div id="duration">
+            <input type="range" id="timeup" max=100,min=0 step=1 onchange="duration()">
+        </div>
+       
+    </div>
+    <br>
+    <button onclick="play()">播放/暂停</button>
+    <br>
+    <div id="dropdown">
+        <button >倍速 选择</button>
+       
+        <div id="content">
+            <button onclick="speed(1)" ;value="1";>1.0</button>
+            <br>
+            <button onclick="speed(0.5)" ;value="0.5">0.5</button>
+            <br>
+            <button onclick="speed(1.5)" value="1.5">1.5</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    function speed(m){
+       let video =document.getElementById("video")
+       video.playbackRate=m;
+    }
+    function change(){
+        let upload =document.getElementById("upload");
+        let filelist=upload.files;
+        let video =document.getElementById("video")
+        video.src=URL.createObjectURL(filelist[0])
+        console.log(filelist[0].size,filelist[0].name)
+    }
+    
+    function play(){
+        let video=document.getElementById("video")
+        // video.c
+        if (video.paused)
+            video.play();
+        else
+            video.pause();
+    }
+    // function read(){
+    //     let v =document.getElementById("upload").files[0];
+    //     let reader =new FileReader;
+    //     reader.readAsDataURL(v);
+    //     // console.log(reader.)
+    //     reader.onload=function(event){
+    //         m =document.getElementById("video");
+    //         console.log(m.duration);
+    //         m.src=event.target.result;
+           
+    //     }
+        
+    // }
+    function duration(){
+        let video=document.getElementById("video")
+        console.log(video.duration)
+        
+        let time=document.getElementById("timeup")
+        console.log(time.value)
+        video.currentTime=parseInt((time.value)*video.duration/100)
+    }
+     
+    
+</script>
+</html>
